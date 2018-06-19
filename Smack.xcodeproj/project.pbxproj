@@ -12,6 +12,7 @@
 		5AEF5F5E20D7307C00114EF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AEF5F5C20D7307C00114EF9 /* Main.storyboard */; };
 		5AEF5F6020D7307E00114EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AEF5F5F20D7307E00114EF9 /* Assets.xcassets */; };
 		5AEF5F6320D7307E00114EF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AEF5F6120D7307E00114EF9 /* LaunchScreen.storyboard */; };
+		DE3FF8B40C94EA80C6E4B675 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E41F49A438764B86552CF4 /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		5AEF5F5F20D7307E00114EF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AEF5F6220D7307E00114EF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AEF5F6420D7307E00114EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D968478D8D60C4C0F955EFA /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
+		B529572CA1672DDAB99C9D2A /* Pods-Smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.release.xcconfig"; sourceTree = "<group>"; };
+		F1E41F49A438764B86552CF4 /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE3FF8B40C94EA80C6E4B675 /* Pods_Smack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F2D5217567F3EAB2C743E2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D968478D8D60C4C0F955EFA /* Pods-Smack.debug.xcconfig */,
+				B529572CA1672DDAB99C9D2A /* Pods-Smack.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5AEF5F4C20D7307B00114EF9 = {
 			isa = PBXGroup;
 			children = (
 				5AEF5F5720D7307B00114EF9 /* Smack */,
 				5AEF5F5620D7307B00114EF9 /* Products */,
+				1F2D5217567F3EAB2C743E2E /* Pods */,
+				E7AD35D06AB7F58B0A1231D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = Smack;
 			sourceTree = "<group>";
 		};
+		E7AD35D06AB7F58B0A1231D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1E41F49A438764B86552CF4 /* Pods_Smack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AEF5F6720D7307E00114EF9 /* Build configuration list for PBXNativeTarget "Smack" */;
 			buildPhases = (
+				43255B0AF24FBA27BE63640F /* [CP] Check Pods Manifest.lock */,
 				5AEF5F5120D7307B00114EF9 /* Sources */,
 				5AEF5F5220D7307B00114EF9 /* Frameworks */,
 				5AEF5F5320D7307B00114EF9 /* Resources */,
+				8B24C84D202465DAFD834F53 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43255B0AF24FBA27BE63640F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smack-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B24C84D202465DAFD834F53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Smack/Pods-Smack-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smack/Pods-Smack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5AEF5F5120D7307B00114EF9 /* Sources */ = {
@@ -278,6 +349,7 @@
 		};
 		5AEF5F6820D7307E00114EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D968478D8D60C4C0F955EFA /* Pods-Smack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +367,7 @@
 		};
 		5AEF5F6920D7307E00114EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B529572CA1672DDAB99C9D2A /* Pods-Smack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
